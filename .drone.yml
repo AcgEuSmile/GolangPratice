@@ -3,8 +3,11 @@ workspace:
   path: .
 pipeline:
   build:
-    image: golang
+    image: golang:alpine
     commands:
       - pwd
       - CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o app .
+  test:
+    image: golang:alpine
+    commands:
       - ./app
