@@ -12,6 +12,4 @@ pipeline:
     commands:
       - ./app
   matrix:
-    GO_VERSION:
-      - alpine
-      - 1.11-alpine3.9
+    GO_VERSION: [alpine, 1.11-alpine3.9]
