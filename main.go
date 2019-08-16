@@ -5,7 +5,7 @@ import "fmt"
 func variable()	string{
 	// Decalre variable testing
 	// Method 1, :=
-	msg := "Drone CI/CD testing!!"
+	// msg := "Drone CI/CD testing!!"
 	// Method 2, var msg string
 	var msg string
 	msg = "Drone  CI/CD testing~~"
