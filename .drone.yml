@@ -2,4 +2,6 @@ pipeline:
   test:
     image: golang
     commands:
-      - go test
+      - pwd
+      - CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o app .
+      - ./app
