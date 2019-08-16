@@ -2,7 +2,7 @@ workspace:
   base: /srv/drone/golang
   path: .
 pipeline:
-  test:
+  build:
     image: golang
     commands:
       - pwd
