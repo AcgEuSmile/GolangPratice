@@ -11,6 +11,6 @@ pipeline:
   test:
     image: alpine
     commands:
-      - ./app
+      - pwd
 
 branches: master
