@@ -7,10 +7,7 @@ pipeline:
     commands:
       - go get
       - GOOS=linux CGO_ENABLED=0 go build -ldflags="-s -w" -o main main.go
-  test:
-    image: golang:${GO_VERSION}
-    commands:
-      - ./app
+      - ./main
   matrix:
     GO_VERSION: golang
       - alpine
