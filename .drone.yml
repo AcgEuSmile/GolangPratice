@@ -3,7 +3,7 @@ workspace:
   path: .
 pipeline:
   test:
-    image: golang:${GO_VERSION}
+    image: golang
     commands:
       - go get
       - CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o app .
