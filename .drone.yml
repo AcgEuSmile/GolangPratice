@@ -6,7 +6,8 @@ pipeline:
     image: golang:alpine
     commands:
       - pwd
-      - CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o ./bin/app ./src/
+      - mkdir ../bin
+      - CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o ../bin/app .
   test:
     image: alpine
     commands:
