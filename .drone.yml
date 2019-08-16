@@ -1,7 +1,17 @@
+workspace: 
+  base: /srv/drone/golang
+  path: .
 pipeline:
-  test:
-    image: golang
+  build:
+    image: golang:${GO_VERSION}
     commands:
-      - pwd
-      - CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o app .
+      - go get
+      - GOOS=linux CGO_ENABLED=0 go build -ldflags="-s -w" -o main main.go
+  test:
+    image: golang:${GO_VERSION}
+    commands:
       - ./app
+  matrix:
+    GO_VERSION: golang
+      - alpine
+      - 1.11-alpine3.9
