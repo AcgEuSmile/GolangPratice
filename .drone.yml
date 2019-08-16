@@ -8,6 +8,10 @@ pipeline:
       - pwd
       - CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o app .
   test:
-    image: golang:alpine
+    image: golang:${GO_VERSION}
     commands:
       - ./app
+  matrix:
+    GO_VERSION:
+      - alpine
+      - 1.11-alpine3.9
