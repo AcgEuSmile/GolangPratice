@@ -2,7 +2,8 @@ package main
 
 import (
 	"fmt"
-	"log"
+	"runtime"
+	"os"
 )
 
 func variable()	string{
@@ -19,7 +20,7 @@ func variable2() string{
 func assert(cond bool, msg string){
 	_, f, l, _ := runtime.Caller(1)
 	if !cond{
-		fmt.Fprintf(os.Stderr, "Failed on (%s:%d): %s", f, l, msg)
+		fmt.Println(os.Stderr, "Failed on (%s:%d): %s", f, l, msg)
 	}
 }
 
