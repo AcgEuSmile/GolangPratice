@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"runtime"
-	"os"
 )
 
 func variable()	string{
