@@ -20,7 +20,7 @@ func variable2() string{
 func assert(cond bool, msg string){
 	_, f, l, _ := runtime.Caller(1)
 	if !cond{
-		fmt.Println(os.Stderr, "Failed on (%s:%d): %s", f, l, msg)
+		fmt.Println("Failed on (%s:%d): %s", f, l, msg)
 	}
 }
 
