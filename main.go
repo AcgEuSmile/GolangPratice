@@ -26,5 +26,5 @@ func assert(cond bool, msg string){
 func main() {
 	fmt.Println(variable())
 	fmt.Println(variable2())
-	assert(2*2=5, "the answer must be 4")
+	assert(2*2==5, "the answer must be 4")
 }
