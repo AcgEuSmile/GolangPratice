@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"log"
+)
 
 func variable()	string{
 	var msg string
@@ -13,7 +16,15 @@ func variable2() string{
 	return msg
 }
 
+func assert(cond bool, msg string){
+	_, f, l, _ := runtime.Caller(1)
+	if !cond{
+		fmt.Fprintf(os.Stderr, "Failed on (%s:%d): %s", f, l, msg)
+	}
+}
+
 func main() {
 	fmt.Println(variable())
 	fmt.Println(variable2())
+	assert(2*2=5, "the answer must be 4")
 }
